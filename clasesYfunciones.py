@@ -1,7 +1,10 @@
 import threading
 import time
 import logging
-
+#locks
+#   mutex(lock)agrega a una lista
+#   semaforo
+#   monitor
 logging.basicConfig(format='%(asctime)s.%(msecs)03d [%(threadName)s] - %(message)s', datefmt='%H:%M:%S', level=logging.INFO)
 
 def dormir():

@@ -76,7 +76,7 @@ print('version threads')
 #no mejoro nada...
 #supongo que la mejora se ve que con threads puedo 
 # bajar de diferentes servidores al mismo tiempo
-for url in img_urlsB:
+for url in img_urls:
     try:
         lock.acquire()
         img_urls
