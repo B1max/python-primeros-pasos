@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(format='%(asctime)s.%(msecs)03d [%(threadName)s] - %(message)s', datefmt='%H:%M:%S', level=logging.INFO)
 
 def dormir():
-    logging.info('Empenzado')
+    logging.info('Empezando')
     time.sleep(1)
     logging.info('Finalizado')
 

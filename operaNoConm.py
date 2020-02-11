@@ -44,14 +44,8 @@ def dividirPorDos():
     finally:
         lock.release()
         #pass
-#thMultiplicar = threading.Thread(target=multiplicaPorDos)
-#thSumar = threading.Thread(target=sumarUno)
-#thSumar.start()
-#thMultiplicar.start()
-#thSumar.join()
-#thMultiplicar.join()
-#logging.info(f'valor final {var}')
 
+#  3 + 1 / 2
 var = 1
 thDividir = threading.Thread(target=dividirPorDos)
 thSumar = threading.Thread(target=sumar, args=[3])
@@ -59,31 +53,30 @@ thDividir.start()
 thSumar.start()
 logging.info(f'valor final del primero {var}')
 
+#  3 / 2 + 1
 var = 3
 thDividir = threading.Thread(target=dividirPorDos)
 thSumar = threading.Thread(target=sumarUno)
 thDividir.start()
 thSumar.start()
-logging.info(f'valor final del segundo{var}')
+logging.info(f'valor final del segundo {var}')
 
+#  (3 + 1 / 2) / 2
 var = 1
 thDividir = threading.Thread(target=dividirPorDos)
 thSumarTres = threading.Thread(target=sumar, args=[3])
+thDividirB = threading.Thread(target=dividirPorDos)
 thDividir.start()
-
 thSumarTres.start()
-#thSumar.join()
-#thDividir.join()
-thDividir = threading.Thread(target=dividirPorDos)
-logging.info(f'valor final del tercero{var}')
+thDividirB.start()
+logging.info(f'valor final del tercero {var}')
 
+#   (3 / 2 + 1) / 2
 var = 3
 thDividir = threading.Thread(target=dividirPorDos)
 thSumar = threading.Thread(target=sumarUno)
+thDividirB = threading.Thread(target=dividirPorDos)
+thDividir.start()
 thSumar.start()
-thDividir.start()
-#thSumar.join()
-#thDividir.join()
-thDividir = threading.Thread(target=dividirPorDos)
-thDividir.start()
-logging.info(f'valor final del cuarto{var}')
+thDividirB.start()
+logging.info(f'valor final del cuarto {var}')
